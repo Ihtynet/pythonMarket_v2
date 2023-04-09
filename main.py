@@ -1,5 +1,5 @@
 """
-Интернет магазин
+Интернет магазин v2
  """
 from flask import Flask, render_template,request
 import sqlite3

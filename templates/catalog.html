@@ -1,0 +1,177 @@
+<html>
+
+<head>
+<title>
+{{title}}
+</title>
+
+<style>
+  .dv_item {
+
+      width:700px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 1px;
+      padding: 5px;
+  }
+  .item_name{
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 20pt;
+      text-shadow: 2px 3px 5px rgba(122,122,122,0.5);
+  }
+  .item_price{
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 28pt;
+      color: #5e0c0c;
+  }
+  .content{
+    width: 1100px;
+    margin: 0 auto;
+  }
+
+  .categories{
+    width: 280px;
+
+  }
+  .categories ul {
+    list-style-type: none;
+  }
+  .categories ul li{
+    margin-bottom: 10px;;
+  }
+
+
+  .catalogs{
+    width: 800px;
+  }
+  .content table{
+    margin-top: 30px;
+  }
+
+  .nav li{
+    margin-left: 30;
+    float: left;
+    font-size: 18pt;
+
+  }
+.nav a{
+  text-decoration: none;
+  color:#5e0c0c;
+}
+.nav a:hover{
+  border-bottom: 2px dashed red;;
+}
+  .nav{
+    padding-bottom: 30px;
+  }
+</style>
+
+</head>
+
+
+<body>
+<div class="content">
+  <h1>{{title}}</h1>
+  <div class="nav">
+    <ul>
+      <li><a href="#">Каталог</a></li>
+      <li><a href="#">Корзина</a></li>
+      <li><a href="#">О магазине</a></li>
+    </ul>
+
+  </div>
+
+  <table width="1100">
+    <tr>
+      <td width="300" valign="top">
+        <div class="categories">
+          <h3>БРЕНДЫ</h3>
+
+          <ul>
+            <li><a href="#">АДИДАС</a></li>
+            <li><a href="#">ААБИБАС</a></li>
+            <li><a href="#">АНИКЕ</a></li>
+          </ul>
+
+        </div>
+      </td>
+
+      <td>
+        <div  class="catalogs">
+          {% for res in res_list %}
+          <div class="dv_item">
+            <table width="100%">
+              <tr>
+                <td rowspan="3" width="200"><img src="/static/images/{{res.image}}" width="200"/></td>
+                <td align="center" class="item_name">{{res.name}}</td>
+              </tr>
+              <tr>
+                <td align="center" class="item_price">{{res.price}}</td>
+              </tr>
+              <tr>
+                <td align="right"><a href="#">Купить</a></td>
+              </tr>
+            </table>
+          </div>
+          {% endfor %}
+          <!--
+          <div class="dv_item">
+            <table width="100%">
+
+
+              <tr>
+                <td rowspan="3" width="200"><img src="/static/images/adidas.png" width="200"/></td>
+                <td align="center" class="item_name">Кросовки АДИДАС</td>
+              </tr>
+              <tr>
+                <td align="center" class="item_price">340.00 руб</td>
+              </tr>
+              <tr>
+                <td align="right"><a href="#">Купить</a></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="dv_item">
+            <table width="100%">
+              <tr>
+                <td rowspan="3" width="200"><img src="/static/images/abibas.jpg" width="200"/></td>
+                <td align="center" class="item_name">Кросовки АБИБАС</td>
+              </tr>
+              <tr>
+                <td align="center" class="item_price">340.00 руб</td>
+              </tr>
+              <tr>
+                <td align="right"><a href="#">Купить</a></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="dv_item">
+            <table width="100%">
+              <tr>
+                <td rowspan="3" width="200"><img src="/static/images/nike.jpg" width="200"/></td>
+                <td align="center" class="item_name">Кросовки НИКЕ</td>
+              </tr>
+              <tr>
+                <td align="center" class="item_price">340.00 руб</td>
+              </tr>
+              <tr>
+                <td align="right"><a href="#">Купить</a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      -->
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+</body>
+
+</html>
